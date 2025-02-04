@@ -37,3 +37,9 @@ const myFunction = function(){
 }
 
 // function data type if function object.
+
+
+// +++++++++++++++++ 
+// Stack(Primitive) ye pe copy mil tha hai og value ka , Heap(non-primitive) ye pe reference mil tha hai og value ka. point to value
+
+let myYoutubename

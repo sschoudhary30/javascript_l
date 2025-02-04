@@ -36,3 +36,39 @@ console.log(typeof StringCon);
 console.log(StringCon);
 // this converstion are more usefull in javascript from.
 
+// ***************************** Operation *********************
+
+let value = 3
+let negValue = -value
+//console.log( negValue)
+/**
+ * console.log(2+2)
+ * console.log(2-2)
+ * cosole.log(2*2)
+ * cosole.log(2**2)
+ * console.log(2/3)
+ * console.log(2%3) remainder
+ * 
+ * 
+ */
+
+console.log(1+2+"3")
+console.log("3"+2+2)
+console.log(3+3/3)
+
+// there is asscosiativity.
+
+console.log(+true); // output 1
+
+console.log(+""); // output 0
+
+let num1, num2, nums3;
+num1=num2=4;
+num2=5;
+num3 = num2;
+
+console.log(num2);
+
+let num = 100;
+//console.log(num++)
+console.log(++num);

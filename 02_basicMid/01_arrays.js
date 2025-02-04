@@ -20,4 +20,16 @@ myArr.shift();
 //his is not good bzc it add value in starting.
 // good for todo list
 
-console.log(myArr.includes(9));
+console.log(myArr.includes(9)); // yes or now
+
+console.log(myArr.indexOf(27)); // what is there on index place
+
+const newArr = myArr.join();// this convert data type array to string.
+
+// slice or splice most asked question
+
+const myn1 = myArr.slice(1,3);// not include 3 element and work copy array
+
+const myn2 = myArr.splice(1,3);// include 3 element also and work on reference arrays or original array. remove that portion from array.
+
+

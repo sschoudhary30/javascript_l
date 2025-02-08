@@ -21,3 +21,7 @@ Document
 title, meta    DIV -> attribute
 
 document.getElementById('firstHeading').innerHTML = "<h1>suresh bhai</h1>"
+
+
+document.baseURI
+document.Links bhi hai.

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aumix suresh</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="main">
+        <ul class="language">
+            <li class="lang">javaScript</li>
+        </ul>
+    </div>
+    
+</body>
+<script>
+    function addLanguage(langname){
+        const li = document.createElement('li');
+        li.innerHTML = `${langname}`;
+        document.querySelector('.language').appendChild(li);
+    }
+
+    addLanguage("python");
+    addLanguage("ruby");
+
+    function addaptiLanguage(langname){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langname));
+        document.querySelector('.language').appendChild(li);
+    }
+    // this optimize bzc innerHTML traver whole tree.
+    addaptiLanguage('Golang');
+    
+    //Edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang);
+    //secondLang.innerHTML = "Mojo"
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    secondLang.replaceWith(newli)
+
+    //edit
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>TypeScript</li>'
+
+    // remove
+    const laslang = document.querySelector('li:last-child');
+    laslang.remove();
+</script>
+</html>

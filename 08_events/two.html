@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event two</title>
+</head>
+<body>
+    <h1>Aumix and code</h1>
+    <button id="stop"></button>
+</body>
+<script>
+    // this is not part of core
+    // settimeout for one time and setInterval for after some time stamp to run code
+
+    const sayMyname = ()=>{
+        console.log("sureh");
+    }
+
+    const changeName=()=>{document.querySelector('h1').innerHTML= "bhai mera bhai";}
+    //setInterval(sayMyname,2000);
+    const changeMe = setTimeout(changeName,2000);
+
+    document.querySelector('#stop').addEventListener('click',()=>{
+        clearTimeout(changeMe);
+    })
+
+</script>
+</html>

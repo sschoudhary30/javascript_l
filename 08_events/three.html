@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event two</title>
+</head>
+<body>
+    <h1>Aumix and code</h1>
+    <button id="start" style="background-color: aqua; cursor: pointer;">Start</button>
+    <button id="stop" style="background-color: aqua; cursor: pointer;">Stop</button>
+</body>
+<script>
+
+    // const sayName = ()=>{
+    //     console.log("suresh")
+    // }
+
+    // setInterval(sayName,2000);
+
+    // passing param from setInterval
+    let interValId; // Global variable to track interval ID
+
+    const sayName = (str) => {
+        console.log(str);
+    };
+
+    document.querySelector("#start").addEventListener("click", () => {
+        if (!interValId) {  // Prevent multiple intervals
+            interValId = setInterval(sayName, 2000, "suresh bhai");
+        }
+    }, false);
+
+    document.querySelector("#stop").addEventListener("click", () => {
+        clearInterval(interValId);
+        interValId = null; // Reset variable so it can start again
+    }, false);
+
+
+</script>
+</html>

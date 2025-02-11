@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // javascript is sequence lang.
+    // html me javascipt inject kar na is not good.
+    // but react me okay hai.
+
+
+    // this is not bad but should use eventlistner.
+    // eventlistner give event + propogation ability.
+    // this give less feature
+    //const owl = document.getElementById('owl').onclick = function(){alert('owl');}
+
+    // good approunch
+    //document.getElementById('owl').addEventListener('click',()=>{alert("owl click again")});
+
+    // attachEvent() this was use phele not now mainly internet exploro
+    // JQuery - on
+
+    //document.getElementById('owl').addEventListener('click',(e)=>{},false);
+    // mostly event are of browser and mouse event.
+
+    // type event
+    // timestamp event
+    // defaultPrevent, target, toElement, srcElement, currentTarget,
+    // clientX, ClientY, screenx, screeny,
+
+    // altkey, ctrlkey ,shiftkey, keyCode
+    
+    // event propogation hai kya
+    // context event bubling and event capturing.
+    // and mostly used defualt => false =>   event bubling.
+
+    // some time we have to use event capture => true also.
+
+    document.getElementById('images').addEventListener('click',(e)=>{
+        console.log("Clicked inside the ul");
+    },false);
+    
+    document.getElementById('owl').addEventListener('click',(e)=>{
+        console.log("Clicked on owl done");
+    },false);
+
+    // when we do true value then event is capture 
+    // parent first then child element
+    // when we do false value then event bubling is done like buble move upward same way first child then parent
+
+    // to stopbubling we can do   e.stopPropagation();
+    document.getElementById('owl').addEventListener('click',(e)=>{
+        console.log("Clicked on owl done");
+        e.stopPropagation();
+    },false);
+
+    document.getElementById('google').addEventListener('click',(e)=>{
+        e.preventDefault();
+    },false);
+
+    document.querySelector('#images').addEventListener('click',(e)=>{
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+            
+        }
+
+        // event spile over.
+        
+        //removeIt.parentNode.removeChild(removeIt); this old one
+    },false)
+
+</script>
+</html>

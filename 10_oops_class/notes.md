@@ -32,3 +32,12 @@ Encapsulation
 Inheritance
 Polymorphism.
 
+# prototype 
+js has prototype ple beheviour
+
+if it not get some value then it find to parent function.
+
+Array ----> Object ----> null
+String ----> Object ----> null
+
+js me sab object.

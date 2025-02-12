@@ -97,4 +97,29 @@ async function consumePromiseFive (){
 
 consumePromiseFive();
 
+async function getAllUser(){
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users')
+
+        const data = await response.json();
+        console.log(data)
+        // here reponse also getting converted so it will also take time so use await here also
+    } catch (error) {
+
+        console.log("Error: ",error)
+        
+    }
+}
+
+//getAllUser()
+
+fetch('https://jsonplaceholder.typicode.com/users').then((response)=>{
+return response.json();
+})
+.then((data)=>{
+    console.log(data);
+})
+.catch((error)=>{
+    console.log(error)
+})
 

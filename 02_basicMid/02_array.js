@@ -24,14 +24,13 @@ console.log(mergedArray);
 */
 
 // one more use spreed operate
-const allheros_spread = [...marvel_heros,...dc]
+const allheros_spread = [...marvel_heros, ...dc];
 
-console.log(allheros_spread)
+console.log(allheros_spread);
 
-let sayArray = [1,2,3,[4,5,6],7,8,[6,[5,4,5,],6]]
+let sayArray = [1, 2, 3, [4, 5, 6], 7, 8, [6, [5, 4, 5], 6]];
 
 const useAble_array = sayArray.flat(Infinity); // flat take parametre which depth for how much sub_array should be desolved.
-
 
 // this it use for scrapping and all
 
@@ -40,12 +39,12 @@ console.log(Array.isArray("suresh"));
 // to convert in array
 console.log(Array.from("suresh"));
 
-console.log(Array.from({name: "hitesh"})); // interesting case for interview. it will return empty array.
+console.log(Array.from({ name: "hitesh" })); // interesting case for interview. it will return empty array.
 
 /// to convert set of element in array
 
-let score1 = 100
-let score2 = 200
-let score3 = 300
+let score1 = 100;
+let score2 = 200;
+let score3 = 300;
 
-console.log(Array.of(score1, score2, score3));
+console.log(Array.of(score1, score2, score3)); // element , array, variable

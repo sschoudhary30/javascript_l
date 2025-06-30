@@ -4,27 +4,24 @@
 // Object.create is  constructor method.
 
 // Interview question:- take symbol add in object key and print it.
- 
+
 const mySymbol = Symbol("suresh");
 
+// object literal below one
 const JSuser = {
-        
-            name:"suresh",
-            "full name":"suresh choudhary",
-            [mySymbol]:"suresh", // this symbol to use in object
-            age: 18,
-            email: "suresh@google.com",
-            isLoggedIn: false,
-            lastLoginDays: ["Monday","Sunday"]
-
-    
-} // Object literals.
-
+  name: "suresh",
+  "full name": "suresh choudhary",
+  [mySymbol]: "suresh", // this symbol to use in object
+  age: 18,
+  email: "suresh@google.com",
+  isLoggedIn: false,
+  lastLoginDays: ["Monday", "Sunday"],
+}; // Object literals.
 
 // way to acces data of object.
 
 //console.log(JSuser.email) // normal ways
-//console.log(JSuser["email"]) // square notation
+//console.log(JSuser["email"]) // square notation bzc at back name is key like "name":"suresh"
 
 // "full name":"suresh choudhary"
 // this kind of value can't be acces by JSuser.full name ways.
@@ -34,9 +31,7 @@ const JSuser = {
 //console.log(JSuser[mySymbol]);
 //console.log(typeof mySymbol);
 
-
-
-// *** 
+// ***
 //console.log(typeof mySymbol); // Output: "symbol"
 //console.log(typeof JSuser[mySymbol]); // Output: "string"
 
@@ -50,26 +45,29 @@ If you want the key itself to be of type Symbol, you should check typeof mySymbo
  */
 
 JSuser.email = "suresh@chat.com";
-console.log(JSuser["email"])
+console.log(JSuser["email"]);
 // this use to change object data
 //Object.freeze(JSuser); // *** imp
-// we can freeze data of object to avoid changes 
+// we can freeze data of object to avoid changes
 
 JSuser.email = "suresh@apple.com";
 //console.log(JSuser["email"])
 //console.log(JSuser)
 
-JSuser.greeting = function(){
-    console.log("hello bhai kesa hai");
-}
+JSuser.greeting = function () {
+  console.log("hello bhai kesa hai");
+};
 
-JSuser.greetingTwo = function(){
-    console.log(`hello hai kese hai ${this.name}`)
-}
+JSuser.greetingTwo = function () {
+  console.log(`hello hai kese hai ${this.name}`);
+};
 // this use to refer same function here JSuser
-console.log(JSuser.greeting) // it will give undefine
+console.log(JSuser.greeting); // it will give undefine
 
-console.log(JSuser.greeting()) // this give error that it is not function
+console.log(JSuser.greeting()); // this give error that it is not function
 
-console.log(JSuser.greetingTwo())
+console.log(JSuser.greetingTwo());
 
+JSuser.greetingThree = function () {
+  console.log(`hello bhai ${this.name}`);
+};

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>try.html</title>
+  </head>
+  <body>
+    <div>
+      <h1>hello bro</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+
+      <input type="Text" id="InputBox" placeholder="Enter Language" />
+      <button id="Addbutton">Add</button>
+
+      <ul class="language"></ul>
+
+      <!-- dom - documet html se ban tha hai, use whatever react, etc -->
+      <!-- htmlcollection, nodelist and array are diff, and can be converted to array -->
+    </div>
+  </body>
+  <script>
+    const langArr = ["Javascript", "Python"];
+
+    const InputBox = document.getElementById("InputBox");
+    const Addbutton = document.getElementById("Addbutton");
+
+    function addLang(lang) {
+      const newLi = document.createElement("li");
+
+      const newText = document.createTextNode(lang);
+
+      newLi.appendChild(newText);
+
+      document.querySelector(".language").appendChild(newLi);
+    }
+
+    langArr.forEach((item) => {
+      addLang(item);
+    });
+
+    Addbutton.addEventListener("click", () => {
+      const newInput = InputBox.value.trim();
+      if (newInput) {
+        langArr.push(newInput);
+        addLang(newInput);
+      }
+    });
+
+    // Edit
+
+    const secondland = document.querySelector("li:nth-child(2)");
+
+    const newLi = document.createElement("li");
+    newLi.textContent = "newLang";
+
+    secondland.replaceWith(newLi);
+
+    // remove
+
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+  </script>
+</html>
+
+<!-- document.getElementById('id').innerHtml="<h2>heelo</h>
+    document.getElementById('id').style.padding = "20px";
+    innerHTML is not optimized and createTextNode is optimized
+    " -->
